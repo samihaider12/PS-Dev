@@ -3,6 +3,7 @@ import {
   Box, Grid, Typography, Paper, Container, Button, Card, CardContent,
   List, ListItem, ListItemIcon, ListItemText, IconButton, Modal, useTheme
 } from '@mui/material';
+import ContactFloatingIcon from "../components/ContactFloatingIcon";
 import ServiceSection2 from './Services2';
 import WebIcon from '@mui/icons-material/Language';
 import EditNoteIcon from '@mui/icons-material/EditNote';
@@ -263,6 +264,16 @@ const ServiceSection: React.FC = () => {
       </Modal>
 
       <ServiceSection2 />
+      <ContactFloatingIcon 
+              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
+              emailAddress="contact@primestacksol.com"  // Aap ka email
+              phoneNumber="+92 348-6805638"  // Aap ka phone number
+              themeColor="#3BC1A8"  // Aap ki website ka theme color
+              position="bottom-right"  // Icon ki position
+              showEmail={true}  // 
+              showPhone={true}  // Phone option show karein ya nahi
+            />
     </Box>
   );
 };

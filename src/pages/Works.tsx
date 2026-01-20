@@ -8,6 +8,7 @@ import {
   Typography,
   Stack,
 } from "@mui/material";
+import ContactFloatingIcon from "../components/ContactFloatingIcon";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { projects } from "../data/projectsData";
@@ -159,6 +160,16 @@ const Projects = () => {
           </Stack>
         </Grid>
       </Grid>
+      <ContactFloatingIcon 
+              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
+              emailAddress="contact@primestacksol.com"  // Aap ka email
+              phoneNumber="+92 348-6805638"  // Aap ka phone number
+              themeColor="#3BC1A8"  // Aap ki website ka theme color
+              position="bottom-right"  // Icon ki position
+              showEmail={true}  // Email option show karein ya nahi
+              showPhone={true}  // Phone option show karein ya nahi
+            />
     </Container>
   );
 };

@@ -1,134 +1,6 @@
-// import { Container,Box,Grid ,Typography} from '@mui/material';
-// import aboutPic from '../assets/about.png'
-//  // i18n
-//  import { useTranslation } from "react-i18next";
-
-// const AboutUs = () => {
-//   const { t } = useTranslation();
-//   // our value
-//   const values = [
-//     { key: "clarity", side: "left" },
-//     { key: "precision", side: "right" },
-//     { key: "purpose", side: "left" }
-//   ];
-//   return (  
-     
-//  <Box sx={{ bgcolor: '#000', py: 15 }}>
-//   <Container maxWidth="lg">
-//     {/* Title Section */}
-//     <Box sx={{ textAlign: 'center', mb: 8 }}>
-//       <Typography variant="h2" sx={{ color: '#fff', fontWeight: 500, display: 'inline-block', mr: 2 }}>
-//         {t("about.mHead1")}
-//       </Typography>
-//       <Typography variant="h2" sx={{ color: '#fff', fontStyle: 'italic', fontWeight: 300, fontFamily: 'serif', display: 'inline-block' }}>
-//         {t("about.mHead2")}
-//       </Typography>
-//     </Box>
-
-     
-//     <Grid container justifyContent="center">
-//       <Grid sx={{ width: '700px', textAlign: 'center' }}>
-//         <Typography sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,fontSize:20 }}>
-//           {t("about.para1")}
-//         </Typography><br /><br />
-//         <Typography sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,fontSize:20 }}>
-//           {t("about.para2")}
-//         </Typography>
-        
-//             <Box 
-//             component="img" 
-//             src={aboutPic} 
-//             sx={{ width: '100%', borderRadius: '12px 12px 0 0', boxShadow: '0 -10px 20px rgba(0,0,0,0.5)' }} 
-//             />
-//             <br /><br />
-//       <Typography sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,fontSize:20 }}>
-//          {t("about.para3")}
-//       </Typography>
-//         <br /><br />
-//       <Typography sx={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,fontSize:20 }}>
-//          {t("about.para4")}
-//       </Typography>
-        
-         
-//       </Grid>
-//     </Grid>
-
-
-//   </Container>
-// {/* Our Value */}
-//   <Box sx={{ bgcolor: '#000', py: 15, color: '#fff', position: 'relative' }}>
-//       <Container maxWidth="md">
-//         {/* Main Heading */}
-//         <Typography variant="h3" sx={{ textAlign: 'center', mb: 10, fontWeight: 'bold' }}>
-//           {t("values.mainTitle")}
-//         </Typography>
-
-//         <Box sx={{ position: 'relative' }}>
-//           {/* Vertical Center Line */}
-//           <Box sx={{
-//             position: 'absolute', left: '50%', top: 0, bottom: 0,
-//             width: '1px', bgcolor: 'rgba(255,255,255,0.2)',
-//             transform: 'translateX(-50%)', display: { xs: 'none', md: 'block' }
-//           }} />
-
-//           {values.map((val, index) => (
-//             <Grid container key={index} sx={{ mb: 8, alignItems: 'center' }}>
-//               {/* Left Side Content */}
-//               <Grid  size={{xs:12 ,md:6 }} sx={{ 
-//                 textAlign: { xs: 'center', md: 'right' }, 
-//                 pr: { md: 5 },
-//                 order: { xs: 2, md: val.side === 'left' ? 1 : 2 } 
-//               }}>
-//                 {val.side === 'left' && (
-//                   <>
-//                     <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-//                       {t(`values.${val.key}.title`)}
-//                     </Typography>
-//                     <Typography sx={{ color: 'rgba(255,255,255,0.6)', maxWidth: { md: '350px' }, ml: 'auto' }}>
-//                       {t(`values.${val.key}.desc`)}
-//                     </Typography>
-//                   </>
-//                 )}
-//               </Grid>
-
-//               {/* Right Side Content */}
-//               <Grid size={{xs:12 ,md:6 }} sx={{ 
-//                 textAlign: { xs: 'center', md: 'left' }, 
-//                 pl: { md: 5 },
-//                 order: { xs: 2, md: val.side === 'right' ? 2 : 1 } 
-//               }}>
-//                 {val.side === 'right' && (
-//                   <>
-//                     <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-//                       {t(`values.${val.key}.title`)}
-//                     </Typography>
-//                     <Typography sx={{ color: 'rgba(255,255,255,0.6)', maxWidth: { md: '350px' } }}>
-//                       {t(`values.${val.key}.desc`)}
-//                     </Typography>
-//                   </>
-//                 )}
-//               </Grid>
-//             </Grid>
-//           ))}
-//         </Box>
-//       </Container>
-//     </Box>
-// </Box>
-
-//   );
-// };
-
-// export default AboutUs;
-
-
-
-
-
-
-
-
 import { Container, Box, Grid, Typography, useTheme } from '@mui/material';
 import aboutPic from '../assets/about.png';
+import ContactFloatingIcon from "../components/ContactFloatingIcon";
 // i18n
 import { useTranslation } from "react-i18next";
 
@@ -273,6 +145,17 @@ const AboutUs = () => {
           </Box>
         </Container>
       </Box>
+
+      <ContactFloatingIcon 
+              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
+              emailAddress="contact@primestacksol.com"  // Aap ka email
+              phoneNumber="+92 348-6805638"  // Aap ka phone number
+              themeColor="#3BC1A8"  // Aap ki website ka theme color
+              position="bottom-right"  // Icon ki position
+              showEmail={true}  // Email option show karein ya nahi
+              showPhone={true}  // Phone option show karein ya nahi
+            />
     </Box>
   );
 };
