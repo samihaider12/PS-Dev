@@ -13,12 +13,10 @@ const Hero = () => {
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
-          // py: { xs: 10, md: 15 },
           marginTop:-10,
           position: 'relative',
         }}
       >
-        {/* Background Branding Glow (Teal) */}
         <Box
           sx={{
             position: 'absolute',

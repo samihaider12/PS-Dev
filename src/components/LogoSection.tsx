@@ -67,7 +67,7 @@ const LogoSection = () => {
                 '&:hover': {
                   filter: 'grayscale(0%)',
                   opacity: 1,
-                  transform: 'translateY(-7px)', // Upar ki taraf move hoga
+                  transform: 'translateY(-7px)', 
                   color: 'primary.main',
                   boxShadow: `
                       0px 20px 40px rgba(59, 193, 168, 0.25), 
@@ -77,10 +77,9 @@ const LogoSection = () => {
 
               }}
             >
-              {/* Icon with Static Teal Glow */}
+               
               <Box
                 sx={{
-                  // color: 'primary.main', // Teal color fixed
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -98,8 +97,7 @@ const LogoSection = () => {
                   fontWeight: 700,
                   letterSpacing: 1.5,
                   whiteSpace: 'nowrap',
-                  // color: 'primary.main',
-                  borderBottom: '1px solid rgba(38, 198, 218, 0.2)', // Subtle teal line
+                  borderBottom: '1px solid rgba(38, 198, 218, 0.2)',  
                   pb: 0.5
                 }}
               >

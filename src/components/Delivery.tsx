@@ -22,22 +22,20 @@ import img9 from "../assets/firstBrowser2.png";
 import img10 from "../assets/firstMobial1.png";
 import img11 from "../assets/firstMobial2.png";
 
-// ============================================
+ 
 // TYPES AND INTERFACES
-// ============================================
 interface RubikCubeProps {
-  faceImages: string[]; // Array of 6 image paths for 6 faces
+  faceImages: string[]; 
 }
 
 interface FilmReelProps {
-  images: string[]; // Array of images for film reel
-  speed?: number; // Animation speed (seconds per image)
-  autoPlay?: boolean; // Auto play animation
+  images: string[]; 
+  speed?: number;  
+  autoPlay?: boolean;  
 }
 
-// ============================================
+ 
 // VERTICAL FILM REEL COMPONENT (WITH LEFT/RIGHT CLICK NAVIGATION)
-// ============================================
 const FilmReelAnimation: React.FC<FilmReelProps> = ({ 
   images, 
   speed = 4, // seconds per image
@@ -76,27 +74,22 @@ const FilmReelAnimation: React.FC<FilmReelProps> = ({
   const handlePrev = () => {
     setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
   };
-
   // Mouse hover effect - stop animation
   const handleMouseEnter = () => {
     setIsPlaying(false);
   };
-
   // Mouse leave effect - resume animation
   const handleMouseLeave = () => {
     setIsPlaying(true);
   };
-
   // Handle image click - show selected image
   const handleImageClick = (imageSrc: string) => {
     setSelectedImage(imageSrc);
   };
-
   // Close selected image
   const handleCloseSelected = () => {
     setSelectedImage(null);
   };
-
   // Get previous, current, and next images
   const getPrevIndex = (currentIndex - 1 + images.length) % images.length;
   const getNextIndex = (currentIndex + 1) % images.length;
@@ -444,9 +437,8 @@ const FilmReelAnimation: React.FC<FilmReelProps> = ({
   );
 };
 
-// ============================================
-// RUBIK'S CUBE COMPONENT (NORMAL SIZE - IMPROVED)
-// ============================================
+ 
+// RUBIK'S CUBE COMPONENT  
 const RubikCube: React.FC<RubikCubeProps> = ({ faceImages }) => {
   const mountRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -592,7 +584,7 @@ const RubikCube: React.FC<RubikCubeProps> = ({ faceImages }) => {
       ref={mountRef} 
       style={{ 
         width: "100%", 
-        height: "520px", // Normal height
+        height: "520px", 
         borderRadius: "20px",
         overflow: "hidden",
         background: "transparent",
@@ -601,25 +593,21 @@ const RubikCube: React.FC<RubikCubeProps> = ({ faceImages }) => {
   );
 };
 
-// ============================================
-// DELIVERY COMPONENT - UPDATED
-// ============================================
+ 
 const Delivery: React.FC = () => {
   const { t } = useTranslation();
 
-  // Array of 6 images for Rubik Cube faces
+   
   const rubikFaces: string[] = [img1, img2, img3, img4, img5, img6];
-
-  // Array of images for film reel
   const filmReelImages: string[] = [
-    img7, // hdhcbj.png
-    img8, // firstBrowser.png
-    img9, // firstBrowser2.png
-    img10, // firstMobial1.png
-    img11, // firstMobial2.png
-    img1, // pic1.png
-    img2, // pic2.png
-    img3, // pic3.png
+    img7,  
+    img8,  
+    img9,  
+    img10, 
+    img11,  
+    img1,  
+    img2,  
+    img3,  
   ];
 
   return (
@@ -713,13 +701,9 @@ const Delivery: React.FC = () => {
             </Stack>
           </Box>
         </Grid>
-
-        {/* Right Content - NORMAL SIZE Rubik Cube */}
         <Grid size={{xs:12, md:7}}>
           <RubikCube faceImages={rubikFaces} />
         </Grid>
-
-        {/* Bottom Film Reel Animation - WITH LEFT/RIGHT CLICK NAVIGATION */}
         <Grid size={{xs:12}}>
           <Box
             sx={{
@@ -739,14 +723,14 @@ const Delivery: React.FC = () => {
 
       </Grid>
      <ContactFloatingIcon 
-              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
-              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
-              emailAddress="contact@primestacksol.com"  // Aap ka email
-              phoneNumber="+92 348-6805638"  // Aap ka phone number
-              themeColor="#3BC1A8"  // Aap ki website ka theme color
-              position="bottom-right"  // Icon ki position
-              showEmail={true}  // Email option show karein ya nahi
-              showPhone={true}  // Phone option show karein ya nahi
+              whatsappNumber="+92 348-6805638" 
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"   
+              emailAddress="contact@primestacksol.com"  
+              phoneNumber="+92 348-6805638"  
+              themeColor="#3BC1A8"  
+              position="bottom-right"  
+              showEmail={true}   
+              showPhone={true}  
             />
     </Container>
   );

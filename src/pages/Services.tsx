@@ -265,14 +265,14 @@ const ServiceSection: React.FC = () => {
 
       <ServiceSection2 />
       <ContactFloatingIcon 
-              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
-              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
-              emailAddress="contact@primestacksol.com"  // Aap ka email
-              phoneNumber="+92 348-6805638"  // Aap ka phone number
-              themeColor="#3BC1A8"  // Aap ki website ka theme color
-              position="bottom-right"  // Icon ki position
-              showEmail={true}  // 
-              showPhone={true}  // Phone option show karein ya nahi
+              whatsappNumber="+92 348-6805638"   
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  
+              emailAddress="contact@primestacksol.com"  
+              phoneNumber="+92 348-6805638"  
+              themeColor="#3BC1A8"  
+              position="bottom-right"  
+              showEmail={true}   
+              showPhone={true}  
             />
     </Box>
   );

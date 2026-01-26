@@ -136,9 +136,8 @@ const AboutUs = () => {
                   </Typography>
                 </Grid>
 
-                {/* Empty Grid for Spacing on Desktop */}
+                 
                 <Grid size={{xs:12 ,md:6}} sx={{ order: { xs: 1, md: val.side === 'left' ? 2 : 1 } }}>
-                   {/* This creates the staggered look */}
                 </Grid>
               </Grid>
             ))}
@@ -147,14 +146,14 @@ const AboutUs = () => {
       </Box>
 
       <ContactFloatingIcon 
-              whatsappNumber="+92 348-6805638"  // Aap ka WhatsApp number
-              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  // Aap ka LinkedIn profile
-              emailAddress="contact@primestacksol.com"  // Aap ka email
-              phoneNumber="+92 348-6805638"  // Aap ka phone number
-              themeColor="#3BC1A8"  // Aap ki website ka theme color
-              position="bottom-right"  // Icon ki position
-              showEmail={true}  // Email option show karein ya nahi
-              showPhone={true}  // Phone option show karein ya nahi
+              whatsappNumber="+92 348-6805638"  
+              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  
+              emailAddress="contact@primestacksol.com"   
+              phoneNumber="+92 348-6805638"  
+              themeColor="#3BC1A8"  
+              position="bottom-right"  
+              showEmail={true}   
+              showPhone={true}   
             />
     </Box>
   );
