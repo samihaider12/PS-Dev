@@ -6,7 +6,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{maxHeight:"70vh"}} >
       <Box
         sx={{
           display: 'flex',
@@ -28,28 +28,7 @@ const Hero = () => {
             zIndex: -1,
           }}
         />
-
-        {/* Pill Shaped Badge (Logo Style) */}
-        <Typography
-          variant="caption"
-          sx={{
-            px: 3,
-            py: 1,
-            mb: 4,
-            letterSpacing: 2,
-            color: "primary.main", // Teal color from theme
-            textTransform: "uppercase",
-            display: "inline-block",
-            borderRadius: "50px",
-            border: "1px solid rgba(38, 198, 218, 0.3)",
-            background: "rgba(38, 198, 218, 0.05)",
-            backdropFilter: 'blur(10px)',
-            fontWeight: "800",
-            fontSize: "0.85rem"
-          }}
-        >
-          {t("hero.subtitle") || "BUILD | DEPLOY | SCALE"}
-        </Typography>
+ 
 
         {/* Main Heading with Brand Typography */}
         <Typography
@@ -82,12 +61,12 @@ const Hero = () => {
         <Typography
           variant="h1"
           sx={{
-            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '5.5rem' },
+            fontSize: {  xs: '40px',sm: '56px', md: '88px' },
             fontWeight: 600,
             lineHeight: 1,
             mb: 3,
             color: 'white',
-            letterSpacing: '-0.02em'
+            letterSpacing: ' -0.8px'
           }}
         >
           <Box component="span" sx={{ color: 'primary.main'}}>
@@ -96,7 +75,6 @@ const Hero = () => {
           <Box 
             component="span" 
             sx={{ 
-             
               fontStyle: 'italic',
               fontWeight: 400
             }}

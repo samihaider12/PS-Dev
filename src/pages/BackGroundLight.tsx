@@ -10,7 +10,7 @@ interface AuroraBackgroundProps {
   showControls?: boolean;
 }
 
-const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
+const BackgroundLights: React.FC<AuroraBackgroundProps> = ({
   intensity = 0.8,
   speed = 1,
   colorScheme = "classic",
@@ -171,6 +171,7 @@ const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
       ref={containerRef}
       sx={{
         position: "absolute",
+        maxHeight:"80vh",
         inset: 0,
         overflow: "hidden",
         zIndex: 0,
@@ -358,5 +359,5 @@ const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
   );
 };
 
-export default AuroraBackground;
+export default BackgroundLights;
  

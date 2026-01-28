@@ -5,7 +5,7 @@ import LogoSection from '../components/LogoSection';
 import Delivery from '../components/Delivery';
 import Works from '../pages/Works';
 import ServiceSection from './Services';
-import AuroraBackground from './AuroraBackground';
+import BackgroundLights from './backGroundLight';
 const Home = () => {
   return (
     <Box
@@ -17,9 +17,9 @@ const Home = () => {
         
       }}
     >
-       <Box sx={{ position: "relative", minHeight: "100vh" ,marginTop:12}}>
+       <Box sx={{ position: "relative", minHeight: "100vh" ,marginTop:15}}>
           
-          <AuroraBackground />
+          <BackgroundLights />
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Hero />
             
@@ -27,9 +27,6 @@ const Home = () => {
         </Box>
 
       <Container sx={{ pt: { xs: 8, md: 12 }, pb: 10 }}>
-
-        {/* Hero Section */}
-       
 
         {/* 2. Dashboard Preview with 3D Effect */}
         <Box
