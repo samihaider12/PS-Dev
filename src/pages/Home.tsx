@@ -5,7 +5,7 @@ import LogoSection from '../components/LogoSection';
 import Delivery from '../components/Delivery';
 import Works from '../pages/Works';
 import ServiceSection from './Services';
-import BackgroundLights from './backGroundLight';
+import BackgroundLights from './BackGroundLight';
 const Home = () => {
   return (
     <Box
