@@ -81,11 +81,11 @@ const ServiceSection: React.FC = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: 'background.default', py: 10, color: 'text.primary', overflow: 'hidden' }}>
+    <Box sx={{ bgcolor: 'background.default', py: 5, color: 'text.primary', overflow: 'hidden' }}>
       <Container maxWidth="lg">
         {/* Main Heading */}
         <Box sx={{ textAlign: 'center', mb: 12 }}>
-          <Typography variant="h2" sx={{ fontWeight: theme.typography.h1.fontWeight, fontSize: { xs: '2.5rem', md: '4rem' }, mb: 2 }}>
+          <Typography variant="h2" sx={{ fontWeight: theme.typography.h1.fontWeight, fontSize: { xs: '40px', md: '64px' }, mb: 2 }}>
             Our <Box component="span" sx={{ color: 'primary.main' }}>Services</Box>
           </Typography>
           <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: '2px' }} />
@@ -94,7 +94,7 @@ const ServiceSection: React.FC = () => {
         {/* SERVICES GRID */}
         <Grid container spacing={2} sx={{ mb: 15 }}>
           {services.map((service, index) => (
-            <Grid size={{xs:6 ,sm:4 ,md:3 ,lg:2.4}} key={index}>
+            <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2.4 }} key={index}>
               <Paper
                 onClick={() => handleOpen(service)}
                 sx={{
@@ -102,7 +102,7 @@ const ServiceSection: React.FC = () => {
                   alignItems: 'center', justifyContent: 'center',
                   bgcolor: 'background.paper',
                   border: '1px solid rgba(59, 193, 168, 0.1)',
-                  borderRadius: '20px', 
+                  borderRadius: '20px',
                   color: 'text.secondary',
                   transition: 'all 0.3s ease-in-out',
                   cursor: 'pointer', p: 2,
@@ -126,7 +126,7 @@ const ServiceSection: React.FC = () => {
 
         {/* Call to Action Grid */}
         <Grid container spacing={4} sx={{ mb: 15 }}>
-          <Grid size={{xs:12 ,md:6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{
               p: { xs: 4, md: 6 }, height: '100%', borderRadius: '32px',
               border: `1px solid ${theme.palette.primary.main}33`,
@@ -135,7 +135,7 @@ const ServiceSection: React.FC = () => {
               backgroundSize: 'cover', display: 'flex', flexDirection: 'column', justifyContent: 'center',
             }}>
               <Typography variant="h3" sx={{ fontWeight: 800, mb: 2, fontSize: { xs: '2rem', md: '2.8rem' } }}>
-                {t("servicesSid.head1")} <br/>
+                {t("servicesSid.head1")} <br />
                 <Box component="span" sx={{ color: 'primary.main' }}>{t("servicesSid.head2")}</Box>
               </Typography>
               <Typography sx={{ color: 'text.secondary', mb: 4, fontSize: '1.1rem' }}>
@@ -151,7 +151,7 @@ const ServiceSection: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid size={{xs:12 ,md:6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{
               display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', height: '100%',
               border: `1px solid ${theme.palette.primary.main}22`, borderRadius: '32px', overflow: 'hidden',
@@ -176,10 +176,10 @@ const ServiceSection: React.FC = () => {
 
       {/* Ticker Section */}
       <Box sx={{ borderY: `1px solid ${theme.palette.primary.main}22`, py: 4, bgcolor: '#050505', mb: 10 }}>
-        <Box sx={{ 
-          display: 'flex', 
-          animation: 'scroll 40s linear infinite', 
-          '@keyframes scroll': { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } } 
+        <Box sx={{
+          display: 'flex',
+          animation: 'scroll 40s linear infinite',
+          '@keyframes scroll': { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
         }}>
           {[1, 2].map((loop) => (
             <Box key={loop} sx={{ display: 'flex', whiteSpace: 'nowrap' }}>
@@ -200,7 +200,7 @@ const ServiceSection: React.FC = () => {
         </Typography>
 
         <Grid container spacing={4}>
-          <Grid size={{xs:12 ,md:7}}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Card sx={{
               bgcolor: 'background.paper', minHeight: '520px', borderRadius: '32px',
               border: `1px solid ${theme.palette.primary.main}22`, position: 'relative', overflow: 'hidden',
@@ -217,7 +217,7 @@ const ServiceSection: React.FC = () => {
             </Card>
           </Grid>
 
-          <Grid size={{xs:12 ,md:5}}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Card sx={{
               bgcolor: 'background.paper', minHeight: '520px', borderRadius: '32px',
               border: `1px solid ${theme.palette.primary.main}22`, position: 'relative', overflow: 'hidden',
@@ -227,7 +227,7 @@ const ServiceSection: React.FC = () => {
                 <Typography variant="h4" sx={{ fontWeight: 800, mb: 2 }}>{t("servicesSid.head5")}</Typography>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.7 }}>{t("servicesSid.paraH5")}</Typography>
               </CardContent>
-              <Box sx={{ position: 'relative', height: '250px', mt: 'auto' }}>
+              <Box sx={{ position: 'relative', height: '275px', mt: 'auto' }}>
                 <Box component="img" src={firstMobial1} sx={{ width: '170px', position: 'absolute', bottom: '-10px', left: '12%', borderRadius: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.6)', zIndex: 2 }} />
                 <Box component="img" src={firstMobial2} sx={{ width: '170px', position: 'absolute', bottom: '-30px', right: '12%', borderRadius: '24px', border: `6px solid ${theme.palette.background.paper}`, boxShadow: '0 10px 40px rgba(0,0,0,0.6)', zIndex: 1 }} />
               </Box>
@@ -264,16 +264,16 @@ const ServiceSection: React.FC = () => {
       </Modal>
 
       <ServiceSection2 />
-      <ContactFloatingIcon 
-              whatsappNumber="+92 348-6805638"   
-              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"  
-              emailAddress="contact@primestacksol.com"  
-              phoneNumber="+92 348-6805638"  
-              themeColor="#3BC1A8"  
-              position="bottom-right"  
-              showEmail={true}   
-              showPhone={true}  
-            />
+      <ContactFloatingIcon
+        whatsappNumber="+92 348-6805638"
+        linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"
+        emailAddress="contact@primestacksol.com"
+        phoneNumber="+92 348-6805638"
+        themeColor="#3BC1A8"
+        position="bottom-right"
+        showEmail={true}
+        showPhone={true}
+      />
     </Box>
   );
 };

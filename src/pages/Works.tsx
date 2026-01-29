@@ -7,6 +7,7 @@ import {
   Button,
   Typography,
   Stack,
+  useTheme,
 } from "@mui/material";
 import ContactFloatingIcon from "../components/ContactFloatingIcon";
 import { useTranslation } from "react-i18next";
@@ -17,25 +18,16 @@ import { Link } from 'react-router-dom';
 const Projects = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const { t } = useTranslation();
-
+  const theme = useTheme();
   return (
     <Container sx={{ py: 10 }}>
-      
-      {/* Header Section */}
-      <Box sx={{ textAlign: 'center', mb: 8, py: 5 }}>
-        <Typography 
-          variant="h2" 
-          sx={{ 
-            color: '#3BC1A8', // Theme Teal
-            fontWeight: 800, 
-            display: 'inline-block',
-            textShadow: '0 0 30px rgba(59, 193, 168, 0.2)' 
-          }}
-        >
-          {t("Work.mainlabel")}
-        </Typography>
-      </Box>
-
+  
+ <Box sx={{ textAlign: 'center', mb: 12 }}>
+          <Typography variant="h2" sx={{ fontWeight: theme.typography.h1.fontWeight, fontSize: { xs: '40px', md: '64px' }, mb: 2 }}>
+            Our <Box component="span" sx={{ color: 'primary.main' }}>Works</Box>
+          </Typography>
+          <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: '2px' }} />
+        </Box>
       <Stack spacing={10}>
         {projects.map((project, index) => (
           <Card

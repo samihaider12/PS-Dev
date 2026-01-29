@@ -26,12 +26,12 @@ const Home = () => {
           </Box>
         </Box>
 
-      <Container sx={{ pt: { xs: 8, md: 12 }, pb: 10 }}>
+      <Container >
 
         {/* 2. Dashboard Preview with 3D Effect */}
         <Box
           sx={{
-            mt: { xs: 8, md: 12 },
+            // mt: { xs: 8, md: 12 },
             perspective: '1200px',
             display: 'flex',
             justifyContent: 'center'
@@ -60,12 +60,12 @@ const Home = () => {
       </Container>
 
       {/* 4. Delivery/Process Section */}
-      <Box sx={{ py: 10, bgcolor: 'rgba(255,255,255,0.02)' }}>
+      <Box  >
         <Delivery />
       </Box>
 
       {/* 5. Works Section (Projects) */}
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" >
         <Grid container justifyContent="center">
           <Grid size={{ xs: 12 }}>
             <Works />
@@ -74,7 +74,7 @@ const Home = () => {
       </Container>
 
       {/* 6. Services Section */}
-      <Box sx={{ py: 10 }}>
+      <Box >
         <ServiceSection />
       </Box>
 

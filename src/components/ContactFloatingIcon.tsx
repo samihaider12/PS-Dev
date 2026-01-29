@@ -4,7 +4,7 @@ import { Box, IconButton, Menu, MenuItem, Fade, Tooltip, Typography } from "@mui
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import MessageIcon from '@mui/icons-material/Message';
+// import MessageIcon from '@mui/icons-material/Message';
 import CloseIcon from '@mui/icons-material/Close';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -81,7 +81,11 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
   };
 
   const positionStyles = getPositionStyles();
-
+  const renderIcon = () => {
+  return isMenuOpen
+    ? <CloseIcon sx={{ fontSize: 28 }} />
+    : <ContactMailIcon sx={{ fontSize: 28 }} />;
+};
   return (
     <>
       {/* Main Floating Contact Icon */}
@@ -96,7 +100,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
         <Tooltip title={isMenuOpen ? "Close Menu" : "Contact Options"} arrow placement="left">
           <IconButton
             onClick={isMenuOpen ? handleClose : handleClick} // Toggle between open/close
-            onMouseEnter={() => setIsHovered(true)}
+            onMouseEnter={() => !isMenuOpen && setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             sx={{
               backgroundColor: themeColor,
@@ -113,13 +117,8 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
               }
             }}
           >
-            {isMenuOpen ? (
-              <CloseIcon sx={{ fontSize: 28 }} />
-            ) : isHovered ? (
-              <MessageIcon sx={{ fontSize: 28 }} />
-            ) : (
-              <ContactMailIcon sx={{ fontSize: 28 }} />
-            )}
+       
+        {renderIcon()}
           </IconButton>
         </Tooltip>
 
@@ -152,7 +151,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
           }}
         >
           {/* WhatsApp Option */}
-          <MenuItem 
+          <MenuItem
             onClick={handleWhatsAppClick}
             sx={{
               py: 1.5,
@@ -192,7 +191,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
           </MenuItem>
 
           {/* LinkedIn Option */}
-          <MenuItem 
+          <MenuItem
             onClick={handleLinkedInClick}
             sx={{
               py: 1.5,
@@ -233,7 +232,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
 
           {/* Email Option (Optional) */}
           {showEmail && (
-            <MenuItem 
+            <MenuItem
               onClick={handleEmailClick}
               sx={{
                 py: 1.5,
@@ -265,9 +264,9 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
                   <Typography sx={{ fontWeight: 'bold', fontSize: '0.95rem' }}>
                     Email
                   </Typography>
-                  <Typography sx={{ 
-                    fontSize: '0.75rem', 
-                    color: 'rgba(255,255,255,0.7)', 
+                  <Typography sx={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255,255,255,0.7)',
                     mt: 0.2,
                     wordBreak: 'break-word'
                   }}>
@@ -280,7 +279,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
 
           {/* Phone Option (Optional) */}
           {showPhone && (
-            <MenuItem 
+            <MenuItem
               onClick={handlePhoneClick}
               sx={{
                 py: 1.5,
@@ -321,10 +320,10 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
           )}
 
           {/* Contact Info Footer */}
-          <Box sx={{ 
-            px: 2, 
-            py: 1.5, 
-            borderTop: '1px solid rgba(255,255,255,0.1)', 
+          <Box sx={{
+            px: 2,
+            py: 1.5,
+            borderTop: '1px solid rgba(255,255,255,0.1)',
             backgroundColor: 'rgba(0,0,0,0.3)',
             textAlign: 'center'
           }}>

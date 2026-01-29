@@ -8,7 +8,10 @@ const DynamicClock = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    
     return () => clearInterval(timer);
   }, []);
 
@@ -18,14 +21,14 @@ const DynamicClock = () => {
 
   const secDeg = (s / 60) * 360;
   const minDeg = (m / 60) * 360 + (s / 60) * 6;
-  const hourDeg = (h / 12) * 360 + (m / 60) * 30;
+  const hourDeg = ((h % 12) / 12) * 360 + (m / 60) * 30;
 
-  const dialLabels = ["24", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"];
+  const dialLabels = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
 
   return (
     <Box className="clock-wrapper" sx={{ 
       borderColor: `${theme.palette.primary.main}44 !important`, 
-      boxShadow: `0 0 40px ${theme.palette.primary.main}11` 
+      boxShadow: `0 0 40px ${theme.palette.primary.main}11`
     }}>
       <Box className="center-pivot" sx={{ bgcolor: 'primary.main' }} />
       
@@ -38,10 +41,22 @@ const DynamicClock = () => {
         </Box>
       ))}
 
-      {/* Hands linked to Theme Colors */}
-      <Box className="clock-hand hour-h" sx={{ transform: `translateX(-50%) rotate(${hourDeg}deg)`, bgcolor: 'text.primary' }} />
-      <Box className="clock-hand min-h" sx={{ transform: `translateX(-50%) rotate(${minDeg}deg)`, bgcolor: 'primary.main' }} />
-      <Box className="clock-hand sec-h" sx={{ transform: `translateX(-50%) rotate(${secDeg}deg)`, bgcolor: 'primary.main', opacity: 0.6 }} />
+      {/* Only Clock Hands - No Digital Display */}
+      <Box className="clock-hand hour-h" sx={{ 
+        transform: `translateX(-50%) rotate(${hourDeg}deg)`, 
+        bgcolor: 'text.primary' 
+      }} />
+      
+      <Box className="clock-hand min-h" sx={{ 
+        transform: `translateX(-50%) rotate(${minDeg}deg)`, 
+        bgcolor: 'primary.main' 
+      }} />
+      
+      <Box className="clock-hand sec-h" sx={{ 
+        transform: `translateX(-50%) rotate(${secDeg}deg)`, 
+        bgcolor: '#ff4444', 
+        opacity: 0.8 
+      }} />
     </Box>
   );
 };
@@ -140,11 +155,30 @@ const ServiceSection2 = () => {
                 <Typography variant="h4" sx={{ fontWeight: 800, mb: 2 }}>
                   Future-<Box component="span" sx={{ color: 'primary.main' }}>Ready</Box>
                 </Typography>
-                <Typography sx={{ color: 'text.secondary', mb: 6, lineHeight: 1.7 }}>
+                <Typography sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.7 }}>
                   Websites designed to be scalable, high-performing, and adapt as your business grows.
                 </Typography>
-                <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', mt: -2 }}>
+                
+                {/* Clock Container */}
+                <Box sx={{ 
+                  flexGrow: 1, 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  mt: 2
+                }}>
                   <DynamicClock />
+                </Box>
+                
+                {/* Simple Timezone Note */}
+                <Box sx={{ mt: 3, textAlign: 'center' }}>
+                  <Typography variant="caption" sx={{ 
+                    color: theme.palette.primary.main,
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold'
+                  }}>
+                    Always on Time
+                  </Typography>
                 </Box>
               </CardContent>
             </Card>
@@ -153,7 +187,7 @@ const ServiceSection2 = () => {
       </Container>
       
       {/* FAQ Section */}
-      <Box sx={{ mt: 15 }}>
+      <Box sx={{ mt: 10 }}>
         <FAQSection />
       </Box>
     </Box>

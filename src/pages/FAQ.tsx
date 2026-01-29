@@ -60,7 +60,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <Box sx={{ bgcolor: 'background.default', py: { xs: 8, md: 12 } }}>
+    <Box sx={{ bgcolor: 'background.default',  }}>
       <Container maxWidth="md">
         {/* Title Section */}
         <Box sx={{ textAlign: 'center', mb: 8 }}>
