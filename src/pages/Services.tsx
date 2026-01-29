@@ -5,18 +5,27 @@ import {
 } from '@mui/material';
 import ContactFloatingIcon from "../components/ContactFloatingIcon";
 import ServiceSection2 from './Services2';
-import WebIcon from '@mui/icons-material/Language';
+
+// New Icons for the updated services
+import CloudIcon from '@mui/icons-material/Cloud';
+import LanguageIcon from '@mui/icons-material/Language';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import SearchIcon from '@mui/icons-material/Search';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import WebAssetIcon from '@mui/icons-material/WebAsset';
+import StorageIcon from '@mui/icons-material/Storage';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import LayersIcon from '@mui/icons-material/Layers';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import MemoryIcon from '@mui/icons-material/Memory';
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+
+// Existing icons (only those actually used)
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import MenuIcon from '@mui/icons-material/Menu';
-import SendIcon from '@mui/icons-material/Send';
-import ExtensionIcon from '@mui/icons-material/Extension';
 import BoltIcon from '@mui/icons-material/Bolt';
-import NearMeIcon from '@mui/icons-material/NearMe';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import BuildIcon from '@mui/icons-material/Build';
 import ShopIcon from '@mui/icons-material/Storefront';
-import GestureIcon from '@mui/icons-material/Gesture';
 import CodeIcon from '@mui/icons-material/Code';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -27,29 +36,39 @@ import firstBrowser1 from '../assets/firstBrowser.png';
 import firstBrowser2 from '../assets/firstBrowser2.png';
 import firstMobial1 from '../assets/firstMobial1.png';
 import firstMobial2 from '../assets/firstMobial2.png';
+import { Link } from 'react-router-dom';
 
+// Updated services list with your requirements
 const services = [
-  { id: "crafted", title: "Crafted Websites", icon: <WebIcon sx={{ fontSize: 40 }} /> },
+  // AWS & Cloud Services
+  { id: "aws", title: "AWS Services", icon: <CloudIcon sx={{ fontSize: 40 }} /> },
+  { id: "web", title: "Web Development", icon: <LanguageIcon sx={{ fontSize: 40 }} /> },
+  { id: "ai", title: "AI Development", icon: <PsychologyIcon sx={{ fontSize: 40 }} /> },
+  { id: "seo", title: "SEO Optimization", icon: <SearchIcon sx={{ fontSize: 40 }} /> },
+  { id: "wordpress", title: "WordPress", icon: <WebAssetIcon sx={{ fontSize: 40 }} /> },
+  { id: "cloud", title: "Cloud Solutions", icon: <StorageIcon sx={{ fontSize: 40 }} /> },
+  { id: "flutter", title: "Flutter Apps", icon: <PhoneAndroidIcon sx={{ fontSize: 40 }} /> },
+  { id: "nextjs", title: "Next.js", icon: <LayersIcon sx={{ fontSize: 40 }} /> },
+  { id: "docker", title: "Docker", icon: <LocalShippingIcon sx={{ fontSize: 40 }} /> },
+  { id: "devops", title: "DevOps", icon: <DeveloperBoardIcon sx={{ fontSize: 40 }} /> },
+  { id: "api", title: "API Development", icon: <TerminalIcon sx={{ fontSize: 40 }} /> },
+  { id: "machinelearning", title: "Machine Learning", icon: <MemoryIcon sx={{ fontSize: 40 }} /> },
+  
+  { id: "eCommerce", title: "eCommerce", icon: <ShoppingCartIcon sx={{ fontSize: 40 }} /> },
   { id: "redesign", title: "Website Redesign", icon: <EditNoteIcon sx={{ fontSize: 40 }} /> },
-  { id: "eCommerce", title: "eCommerce Design", icon: <ShoppingCartIcon sx={{ fontSize: 40 }} /> },
-  { id: "CMS", title: "CMS & Dynamic", icon: <MenuIcon sx={{ fontSize: 40 }} /> },
-  { id: "Landing", title: "Landing Pages", icon: <SendIcon sx={{ fontSize: 40 }} /> },
-  { id: "Identity", title: "Consistent Identity", icon: <ExtensionIcon sx={{ fontSize: 40 }} /> },
-  { id: "Motion", title: "Motion Design", icon: <BoltIcon sx={{ fontSize: 40 }} /> },
-  { id: "UX", title: "UX Strategy", icon: <NearMeIcon sx={{ fontSize: 40 }} /> },
-  { id: "Optimization", title: "Performance", icon: <RocketLaunchIcon sx={{ fontSize: 40 }} /> },
-  { id: "Maintenance", title: "Support", icon: <BuildIcon sx={{ fontSize: 40 }} /> },
+  { id: "motion", title: "Motion Design", icon: <BoltIcon sx={{ fontSize: 40 }} /> },
+  { id: "optimization", title: "Performance", icon: <RocketLaunchIcon sx={{ fontSize: 40 }} /> },
 ];
 
 const platforms = [
-  { name: "Webflow", icon: <CodeIcon /> },
-  { name: "WordPress", icon: <WebIcon /> },
-  { name: "Wix", icon: <WebIcon /> },
-  { name: "Framer", icon: <GestureIcon /> },
-  { name: "HubSpot", icon: <ExtensionIcon /> },
-  { name: "Squarespace", icon: <WebIcon /> },
+  { name: "AWS", icon: <CloudIcon /> },
+  { name: "Next.js", icon: <LayersIcon /> },
+  { name: "React", icon: <CodeIcon /> },
+  { name: "Flutter", icon: <PhoneAndroidIcon /> },
+  { name: "Docker", icon: <LocalShippingIcon /> },
+  { name: "AI / ML", icon: <MemoryIcon /> },
+  { name: "WordPress", icon: <WebAssetIcon /> },
   { name: "Shopify", icon: <ShopIcon /> },
-  { name: "Figma", icon: <GestureIcon /> },
 ];
 
 const ServiceSection: React.FC = () => {
@@ -94,7 +113,7 @@ const ServiceSection: React.FC = () => {
         {/* SERVICES GRID */}
         <Grid container spacing={2} sx={{ mb: 15 }}>
           {services.map((service, index) => (
-            <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2.4 }} key={index}>
+            <Grid size={{ xs: 6, sm: 4, md: 3, lg: 3 }} key={index}>
               <Paper
                 onClick={() => handleOpen(service)}
                 sx={{
@@ -142,6 +161,8 @@ const ServiceSection: React.FC = () => {
                 {t("servicesSid.para")}
               </Typography>
               <Button
+               component={Link}
+              to="/works"
                 variant="contained"
                 color="primary"
                 sx={{ px: 5, py: 1.5, borderRadius: '12px' }}
@@ -183,7 +204,11 @@ const ServiceSection: React.FC = () => {
         }}>
           {[1, 2].map((loop) => (
             <Box key={loop} sx={{ display: 'flex', whiteSpace: 'nowrap' }}>
-              {["Brand Identity", "Code Customization", "Website Design & Development", "UI/UX Design"].map((text, i) => (
+              {[
+                "AWS Cloud Solutions", "AI & Machine Learning", "Web Development", 
+                "Next.js Applications", "Flutter Mobile Apps", "Docker & DevOps",
+                "SEO Optimization", "WordPress Development"
+              ].map((text, i) => (
                 <Typography key={i} sx={{ mx: 6, color: 'primary.main', fontWeight: 800, fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 3 }}>
                   • {text}
                 </Typography>
@@ -247,16 +272,41 @@ const ServiceSection: React.FC = () => {
                 <Typography variant="h5" sx={{ color: 'text.primary', fontWeight: 900 }}>{selectedService.title}</Typography>
               </Box>
               <Typography sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}>
-                {t(`servicespop.details.${selectedService.id}.mainDesc`)}
+                {t(`servicespop.details.${selectedService.id}.mainDesc`, 
+                  `Complete ${selectedService.title} solutions tailored to your business needs.`)}
               </Typography>
               <Typography variant="subtitle1" sx={{ color: 'primary.main', fontWeight: 800, mb: 2, textTransform: 'uppercase' }}>Key Features</Typography>
               <List sx={{ p: 0 }}>
-                {(t(`servicespop.details.${selectedService.id}.features`, { returnObjects: true }) as string[]).map((feature, i) => (
-                  <ListItem key={i} sx={{ px: 0, py: 1 }}>
-                    <ListItemIcon sx={{ minWidth: 35 }}><CheckCircleOutlineIcon sx={{ color: 'primary.main', fontSize: 22 }} /></ListItemIcon>
-                    <ListItemText primary={feature} primaryTypographyProps={{ sx: { color: 'text.primary', fontSize: '0.95rem' } }} />
-                  </ListItem>
-                ))}
+                {(() => {
+                  const features = t(`servicespop.details.${selectedService.id}.features`, { returnObjects: true });
+                  // Check if features is an array
+                  if (Array.isArray(features) && features.length > 0) {
+                    return features.map((feature, i) => (
+                      <ListItem key={i} sx={{ px: 0, py: 1 }}>
+                        <ListItemIcon sx={{ minWidth: 35 }}><CheckCircleOutlineIcon sx={{ color: 'primary.main', fontSize: 22 }} /></ListItemIcon>
+                        <ListItemText primary={feature} primaryTypographyProps={{ sx: { color: 'text.primary', fontSize: '0.95rem' } }} />
+                      </ListItem>
+                    ));
+                  } else {
+                    // Default features if translation not found
+                    return (
+                      <>
+                        <ListItem sx={{ px: 0, py: 1 }}>
+                          <ListItemIcon sx={{ minWidth: 35 }}><CheckCircleOutlineIcon sx={{ color: 'primary.main', fontSize: 22 }} /></ListItemIcon>
+                          <ListItemText primary="Customized solutions for your business" primaryTypographyProps={{ sx: { color: 'text.primary', fontSize: '0.95rem' } }} />
+                        </ListItem>
+                        <ListItem sx={{ px: 0, py: 1 }}>
+                          <ListItemIcon sx={{ minWidth: 35 }}><CheckCircleOutlineIcon sx={{ color: 'primary.main', fontSize: 22 }} /></ListItemIcon>
+                          <ListItemText primary="Professional implementation and support" primaryTypographyProps={{ sx: { color: 'text.primary', fontSize: '0.95rem' } }} />
+                        </ListItem>
+                        <ListItem sx={{ px: 0, py: 1 }}>
+                          <ListItemIcon sx={{ minWidth: 35 }}><CheckCircleOutlineIcon sx={{ color: 'primary.main', fontSize: 22 }} /></ListItemIcon>
+                          <ListItemText primary="Scalable and maintainable architecture" primaryTypographyProps={{ sx: { color: 'text.primary', fontSize: '0.95rem' } }} />
+                        </ListItem>
+                      </>
+                    );
+                  }
+                })()}
               </List>
             </>
           )}

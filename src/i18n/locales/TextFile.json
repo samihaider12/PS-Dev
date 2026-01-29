@@ -7,7 +7,7 @@
     "heading2": "Websites ",
     "tagline1": "Lasting",
     "tagline2": "Impressions",
-    "description": "Premium websites crafted for bold brands. We blend aesthetics with functionality."
+    "description": "Premium software solutions crafted for bold brands. We blend innovation with performance."
   },
   "buttons": {
     "preview": "PREVIEW",
@@ -15,26 +15,142 @@
     "about": "About us",
     "work": "See our Work"
   },
+
+
+
+
   "servicespop": {
     "details": {
-      "crafted": {
-        "mainDesc": "Custom-built websites designed from the ground up for clarity, structure, and intent. Every site blends tailored design, responsive performance, and seamless functionality.",
+      "aws": {
+        "mainDesc": "Full-stack AWS cloud solutions including infrastructure setup, server management, scaling, and optimization. We provide end-to-end cloud services for businesses of all sizes.",
         "features": [
-          "5 core pages (Home, About, Services, Work, Contact)",
-          "Fully responsive layout across devices",
-          "CMS setup for dynamic content",
-          "Animation and micro interactions",
-          "Basic SEO setup"
+          "AWS EC2 instance setup and management",
+          "S3 storage and CDN configuration",
+          "RDS database management",
+          "Lambda serverless functions",
+          "CloudFront and Route 53 DNS setup",
+          "Security groups and IAM configuration"
         ]
       },
-      "redesign": {
-        "mainDesc": "Transform your existing website into a refined, high-performing experience. We rebuild from the core, improving visuals, usability, and conversion flow while keeping your brand identity intact.",
+      "web": {
+        "mainDesc": "Modern web development using cutting-edge technologies like React, Next.js, and TypeScript. We create fast, responsive, and scalable web applications.",
         "features": [
-          "UX review and design audit",
-          "Redesigned key pages (up to 5)",
-          "Updated structure for clarity and engagement",
-          "Responsive layout for all devices",
-          "Optimized loading and accessibility"
+          "Responsive web design",
+          "Progressive Web Apps (PWA)",
+          "RESTful API integration",
+          "Performance optimization",
+          "Cross-browser compatibility",
+          "SEO-friendly structure"
+        ]
+      },
+      "ai": {
+        "mainDesc": "Artificial Intelligence solutions including chatbots, predictive analytics, computer vision, and machine learning models tailored to your business needs.",
+        "features": [
+          "Custom AI chatbot development",
+          "Machine learning model training",
+          "Predictive analytics systems",
+          "Natural Language Processing (NLP)",
+          "Computer vision applications",
+          "AI integration with existing systems"
+        ]
+      },
+      "seo": {
+        "mainDesc": "Comprehensive SEO optimization services to improve your website's visibility, ranking, and organic traffic through technical and content optimization.",
+        "features": [
+          "Technical SEO audit",
+          "Keyword research and strategy",
+          "On-page optimization",
+          "Content strategy development",
+          "Link building campaigns",
+          "Performance tracking and reporting"
+        ]
+      },
+      "wordpress": {
+        "mainDesc": "Custom WordPress development including theme customization, plugin development, eCommerce solutions, and performance optimization.",
+        "features": [
+          "Custom WordPress theme development",
+          "Plugin customization and development",
+          "WooCommerce eCommerce setup",
+          "Performance optimization",
+          "Security hardening",
+          "Maintenance and updates"
+        ]
+      },
+      "cloud": {
+        "mainDesc": "Complete cloud migration and management services across AWS, Google Cloud, and Azure platforms for scalable and reliable infrastructure.",
+        "features": [
+          "Cloud migration strategy",
+          "Multi-cloud architecture",
+          "Cost optimization",
+          "Disaster recovery planning",
+          "24/7 monitoring and support",
+          "Security compliance"
+        ]
+      },
+      "flutter": {
+        "mainDesc": "Cross-platform mobile application development using Flutter for iOS and Android with native-like performance and beautiful UI.",
+        "features": [
+          "Cross-platform mobile apps",
+          "iOS and Android deployment",
+          "Custom UI/UX design",
+          "API integration",
+          "App Store and Play Store publishing",
+          "Maintenance and updates"
+        ]
+      },
+      "nextjs": {
+        "mainDesc": "Server-side rendered React applications with Next.js for optimal performance, SEO benefits, and excellent user experience.",
+        "features": [
+          "Server-side rendering (SSR)",
+          "Static site generation (SSG)",
+          "API routes and middleware",
+          "Optimized performance",
+          "SEO optimization",
+          "Deployment to Vercel"
+        ]
+      },
+      "docker": {
+        "mainDesc": "Containerization services using Docker for consistent development environments, microservices architecture, and simplified deployment.",
+        "features": [
+          "Docker container setup",
+          "Docker Compose configuration",
+          "Microservices architecture",
+          "CI/CD pipeline integration",
+          "Container orchestration",
+          "Monitoring and logging"
+        ]
+      },
+      "devops": {
+        "mainDesc": "DevOps implementation including CI/CD pipelines, infrastructure as code, monitoring, and automation to streamline development processes.",
+        "features": [
+          "CI/CD pipeline setup",
+          "Infrastructure as Code (IaC)",
+          "Automated testing and deployment",
+          "Monitoring and alerting",
+          "Configuration management",
+          "Security automation"
+        ]
+      },
+      "api": {
+        "mainDesc": "Custom API development and integration services for connecting your applications with third-party services and internal systems.",
+        "features": [
+          "RESTful API development",
+          "GraphQL API implementation",
+          "Third-party API integration",
+          "API documentation",
+          "Authentication and authorization",
+          "Rate limiting and security"
+        ]
+      },
+      "machinelearning": {
+        "mainDesc": "Machine learning model development and deployment for data analysis, predictions, and automation solutions.",
+        "features": [
+          "Data preprocessing and cleaning",
+          "Model training and evaluation",
+          "Deep learning implementations",
+          "Model deployment and serving",
+          "Performance monitoring",
+          "Continuous model improvement"
         ]
       },
       "eCommerce": {
@@ -47,36 +163,17 @@
           "Mobile-friendly shopping experience"
         ]
       },
-      "CMS": {
-        "mainDesc": "Dynamic sites powered by an intuitive content management system for effortless updates. Ideal for portfolios, blogs, or content-driven businesses.",
+      "redesign": {
+        "mainDesc": "Transform your existing website into a refined, high-performing experience. We rebuild from the core, improving visuals, usability, and conversion flow while keeping your brand identity intact.",
         "features": [
-          "CMS structure and data collections setup",
-          "Dynamic page linking and layout design",
-          "Easy backend content management",
-          "Scalable design for future growth",
-          "SEO-ready page structure"
+          "UX review and design audit",
+          "Redesigned key pages (up to 5)",
+          "Updated structure for clarity and engagement",
+          "Responsive layout for all devices",
+          "Optimized loading and accessibility"
         ]
       },
-      "Landing": {
-        "mainDesc": "Focused, fast-loading pages created to capture attention and drive conversions. Perfect for campaigns, events, or single service promotions.",
-        "features": [
-          "1 custom landing page",
-          "Optimized content structure",
-          "Responsive design",
-          "Conversion-focused layout",
-          "Analytics and tracking integration"
-        ]
-      },
-      "Identity": {
-        "mainDesc": "Every project follows a unified design language that reflects brand personality across every touchpoint. Consistency enhances trust and visual harmony.",
-        "features": [
-          "Uniform color and typography system",
-          "Reusable components and layout standards",
-          "Consistent design across all pages",
-          "Accessibility and visual balance"
-        ]
-      },
-      "Motion": {
+      "motion": {
         "mainDesc": "Purposeful motion that enhances usability and flow. Every animation supports clarity, helping users navigate with ease and delight.",
         "features": [
           "Subtle hover and scroll effects",
@@ -85,16 +182,7 @@
           "Performance-optimized animations"
         ]
       },
-      "UX": {
-        "mainDesc": "Design grounded in user behavior and intent. We ensure every page feels intuitive, logical, and conversion-ready.",
-        "features": [
-          "Content and navigation structure",
-          "Wireframe and layout planning",
-          "CTA and user flow optimization",
-          "Accessibility and mobile-first design"
-        ]
-      },
-      "Optimization": {
+      "optimization": {
         "mainDesc": "Beautiful design means little without performance. We fine-tune every site for speed, accessibility, and seamless loading.",
         "features": [
           "Page speed improvements",
@@ -103,19 +191,10 @@
           "SEO-friendly structure",
           "Analytics and tracking"
         ]
-      },
-      "Maintenance": {
-        "mainDesc": "Keep your website updated, secure, and performing at its best. We handle ongoing adjustments so you can focus on your business.",
-        "features": [
-          "Regular site checkups",
-          "Content and design updates",
-          "Backup and security monitoring",
-          "Performance review and optimization",
-          "Priority technical support"
-        ]
       }
     }
   },
+  
   "about": {
     "mHead1": "About",
     "mHead2": "Us",

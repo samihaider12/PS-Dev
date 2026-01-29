@@ -133,7 +133,7 @@ const Projects = () => {
             <Button
               variant="outlined"
               component={Link}
-              to="/connectSection"
+              to="/connect"
               sx={{
                 borderColor: '#3BC1A8',
                 color: '#3BC1A8',
