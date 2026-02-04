@@ -1,7 +1,7 @@
 import food  from "../assets/food.png";
 import login from "../assets/login.png";
 import dash from "../assets/vos.png";
- 
+import currency from "../assets/currency.png" 
 
 export interface Project {
   image: string;
@@ -23,5 +23,9 @@ export const projects: Project[] = [
      image: food,
     link: "https://tasty-cart-food.vercel.app/",
   },
+   {
+     image: currency,
+    link: "https://currency-nine-umber.vercel.app/dashboard",
+  }
   
 ];
