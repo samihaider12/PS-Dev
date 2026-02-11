@@ -2,7 +2,7 @@ import food  from "../assets/food.png";
 import login from "../assets/login.png";
 import dash from "../assets/vos.png";
 import currency from "../assets/currency.png" 
-
+import estore from "../assets/estor.png"
 export interface Project {
   image: string;
   link: string;
@@ -26,6 +26,10 @@ export const projects: Project[] = [
    {
      image: currency,
     link: "https://currency-nine-umber.vercel.app/dashboard",
+  },
+  {
+     image: estore,
+    link: "https://e-store-bice.vercel.app/",
   }
   
 ];
