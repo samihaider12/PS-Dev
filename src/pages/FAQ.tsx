@@ -134,7 +134,7 @@ const FAQSection = () => {
             variant="h2"
             sx={{
               color: 'text.primary',
-              fontWeight: 800,
+              fontWeight: 500,
               fontSize: { xs: '2.5rem', md: '3.5rem' },
               mb: 2
             }}
@@ -155,7 +155,7 @@ const FAQSection = () => {
           >
             Get answers to common questions about our comprehensive digital solutions and services
           </Typography>
-          <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: 2 }} />
+          <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: "4px" }} />
         </Box>
 
         {/* Accordion FAQ List */}
@@ -185,7 +185,7 @@ const FAQSection = () => {
               }}
             >
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: 'primary.main', fontSize: '1.8rem' }} />}
+                expandIcon={<ExpandMoreIcon sx={{ color: 'primary.main', fontSize: '20px' }} />}
                 sx={{ 
                   px: { xs: 2, md: 3 }, 
                   py: 2,
@@ -197,12 +197,12 @@ const FAQSection = () => {
                   },
                   '&.Mui-expanded .MuiTypography-root': {
                     color: 'primary.main',
-                    fontWeight: 800
+                    fontWeight: 500
                   }
                 }}
               >
                 <Typography sx={{ 
-                  fontWeight: 700, 
+                  fontWeight: 500, 
                   fontSize: { xs: '1rem', md: '1.15rem' },
                   display: 'flex',
                   alignItems: 'center',
@@ -210,7 +210,7 @@ const FAQSection = () => {
                 }}>
                   <Box sx={{ 
                     color: 'primary.main',
-                    fontWeight: 800,
+                    fontWeight: 500,
                     minWidth: '24px'
                   }}>
                     {faq.id}.
@@ -260,7 +260,7 @@ const FAQSection = () => {
                     </Box>
                     <Typography variant="subtitle1" sx={{ 
                       color: 'primary.main', 
-                      fontWeight: 800, 
+                      fontWeight: 500, 
                       fontSize: '0.95rem', 
                       textTransform: 'uppercase', 
                       letterSpacing: 1,
@@ -294,7 +294,7 @@ const FAQSection = () => {
         }}>
           <Typography variant="h4" sx={{ 
             color: 'text.primary', 
-            fontWeight: 800,
+            fontWeight: 500,
             mb: 2
           }}>
             Still Have Questions?
@@ -314,7 +314,7 @@ const FAQSection = () => {
             background: theme.palette.background.paper,
             border: `1px solid ${theme.palette.primary.main}30`,
             color: 'primary.main',
-            fontWeight: 700,
+            fontWeight: 500,
             fontSize: '1.1rem'
           }}>
             contact@primestacksol.com

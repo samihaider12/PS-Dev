@@ -226,7 +226,7 @@ const Footer = () => {
         }}>
           <Box
             component={RouterLink}
-            to="/"
+            to="/home"
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -254,7 +254,7 @@ const Footer = () => {
             <Typography
               variant="h6"
               sx={{
-                fontWeight: 800,
+                fontWeight: 500,
                 color: 'white',
                 letterSpacing: { xs: -0.3, md: -0.5 },
                 fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.4rem' }

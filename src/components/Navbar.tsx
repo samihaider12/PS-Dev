@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useTranslation } from "react-i18next";
 
 const navItems = [
-  { label: 'Home', path: '/' },
+  { label: 'Home', path: '/home' },
   { label: 'About Us', path: '/about' },
   { label: 'Works', path: '/works' },
   { label: 'Services', path: '/services' },
@@ -89,7 +89,7 @@ const Navbar = () => {
             {/* Logo Section */}
             <Box 
               component={Link} 
-              to="/" 
+              to="/home" 
               sx={{ 
                 display: 'flex', 
                 alignItems: 'center', 

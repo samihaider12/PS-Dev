@@ -12,6 +12,7 @@ import Templates from '../pages/Templates';
 import FAQSection from '../pages/FAQ';
 import Approach from '../pages/Approach';
 import Footer from '../components/Footer';
+import NotFoundPage from '../pages/NotFoundPage';
 
 // Helper to scroll to top on page change
 const ScrollToTop = () => {
@@ -34,7 +35,7 @@ const AppRouter = () => {
         
          
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/works" element={<Works />} />
             <Route path="/services" element={<Services />} />
@@ -42,6 +43,7 @@ const AppRouter = () => {
             <Route path="/faqs" element={<FAQSection />} />
             <Route path="/approach" element={<Approach />} />
             <Route path="/templates" element={<Templates />} />
+            <Route path="*" element={<NotFoundPage />} />
              
           </Routes>
         

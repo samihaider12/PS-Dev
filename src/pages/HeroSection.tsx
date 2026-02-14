@@ -47,7 +47,7 @@ const Hero = () => {
     <Box 
       sx={{ 
         position: 'relative',
-        minHeight: {xs:"100vh",sm:"70vh" , md:'90vh'},
+        minHeight: {xs:"100vh",sm:"100vh" , md:'90vh'},
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -71,6 +71,7 @@ const Hero = () => {
               color:{ xs:"#201d1dff",sm:"white" ,md:'white'},
               textShadow:"5px",
               lineHeight: 1.1,
+              mt:{xs:"15px"},
               mb: 3,
               maxWidth: '900px',
               letterSpacing: '-0.02em'
