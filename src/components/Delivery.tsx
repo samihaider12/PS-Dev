@@ -772,7 +772,7 @@ const Delivery: React.FC = () => {
                 sx={{
                   bgcolor: "primary.main",
                   color: "black",
-                  fontWeight: "bold",
+                  fontWeight: 400,
                   px: { xs: 3, md: 4 },
                   py: 1.5,
                   borderRadius: "8px",
@@ -794,6 +794,7 @@ const Delivery: React.FC = () => {
                 sx={{
                   borderColor: "rgba(59, 193, 168, 0.5)",
                   color: "white",
+                  fontWeight:400,
                   px: { xs: 3, md: 4 },
                   py: 1.5,
                   borderRadius: "8px",

@@ -28,7 +28,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
   phoneNumber = "+1234567890",
   showEmail = true,
   showPhone = true,
-  themeColor = "#3BC1A8"
+  themeColor = "linear-gradient(45deg, #17D4AA 90%, #00D2FF 30%)"
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -114,6 +114,7 @@ const ContactFloatingIcon: React.FC<ContactFloatingIconProps> = ({
                 backgroundColor: `${themeColor}CC`,
                 transform: 'scale(1.1)',
                 boxShadow: `0 8px 25px ${themeColor}99`,
+                  background: 'linear-gradient(45deg, #00D2FF 30%, #17D4AA 90%)',
               }
             }}
           >

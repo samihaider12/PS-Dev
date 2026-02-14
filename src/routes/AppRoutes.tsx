@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Box, ThemeProvider, CssBaseline } from '@mui/material';
+import {  ThemeProvider, CssBaseline } from '@mui/material';
 import { theme } from '../theme/theme'; // Make sure you create the theme.ts file below
 import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
@@ -32,14 +32,7 @@ const AppRouter = () => {
         <ScrollToTop />
         <Navbar />
         
-        <Box 
-          component="main" 
-          sx={{ 
-            minHeight: '80vh', // Ensures footer stays at bottom on short pages
-            display: 'flex',
-            flexDirection: 'column'
-          }}
-        >
+         
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
@@ -51,7 +44,6 @@ const AppRouter = () => {
             <Route path="/templates" element={<Templates />} />
              
           </Routes>
-        </Box>
         
         <Footer />
       </BrowserRouter>

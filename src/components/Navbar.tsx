@@ -30,7 +30,7 @@ const Navbar = () => {
       <Typography 
         variant="h6" 
         sx={{ 
-          my: 2, 
+          
           fontWeight: 'bold', 
           color: 'primary.main',
           letterSpacing: 1 
@@ -49,7 +49,7 @@ const Navbar = () => {
               sx={{ 
                 textAlign: 'center',
                 borderRadius: '8px',
-                mb: 1,
+                
                 bgcolor: location.pathname === item.path ? 'rgba(38, 198, 218, 0.1)' : 'transparent',
                 color: location.pathname === item.path ? 'primary.main' : 'text.primary'
               }}
@@ -65,7 +65,7 @@ const Navbar = () => {
         to="/connect" 
         variant="contained" 
         fullWidth 
-        sx={{ mt: 4, borderRadius: '50px', py: 1.5 }}
+        sx={{ mt: 4, borderRadius: '50px', py: 0.5 }}
       >
         {t("connect.label") || "Let's Connect"}
       </Button>
@@ -84,7 +84,7 @@ const Navbar = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
+          <Toolbar sx={{ justifyContent: 'space-between',  }}>
             
             {/* Logo Section */}
             <Box 
@@ -116,10 +116,10 @@ const Navbar = () => {
               <Typography 
                 variant="h6" 
                 sx={{ 
-                  fontWeight: 800, 
+                  fontWeight: 500, 
                   color: 'white', 
                   letterSpacing: -0.5,
-                  fontSize: '1.4rem'
+                  fontSize: '20px'
                 }}
               >
                 PrimeStack<Box component="span" sx={{ color: 'primary.main' }}>Sol</Box>
@@ -136,8 +136,8 @@ const Navbar = () => {
                   sx={{ 
                     px: 2,
                     color: location.pathname === item.path ? 'primary.main' : 'text.secondary', 
-                    fontWeight: 600,
-                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    fontSize: '15px',
                     textTransform: 'none',
                     '&:hover': { color: 'primary.main', bgcolor: 'transparent' } 
                   }}
@@ -155,8 +155,8 @@ const Navbar = () => {
                 variant="contained" 
                 sx={{ 
                   borderRadius: '50px', 
-                  px: 3,
-                  fontWeight: 'bold',
+                  // px: 3,
+                  fontWeight: 400,
                   boxShadow: '0 4px 14px 0 rgba(38, 198, 218, 0.39)', // Teal Glow
                   '&:hover': {
                     boxShadow: '0 6px 20px rgba(38, 198, 218, 0.5)',

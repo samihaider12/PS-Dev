@@ -13,7 +13,7 @@ import ContactFloatingIcon from "../components/ContactFloatingIcon";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { projects } from "../data/projectsData";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const Projects = () => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -21,19 +21,19 @@ const Projects = () => {
   const theme = useTheme();
   return (
     <Container sx={{ py: 10 }}>
-  
- <Box sx={{ textAlign: 'center', mb: 12 }}>
-          <Typography variant="h2" sx={{ fontWeight: theme.typography.h1.fontWeight, fontSize: { xs: '40px', md: '64px' }, mb: 2 }}>
-            Our <Box component="span" sx={{ color: 'primary.main' }}>Works</Box>
-          </Typography>
-          <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: '2px' }} />
-        </Box>
+
+      <Box sx={{ textAlign: 'center', mb: 12 }}>
+        <Typography variant="h2" sx={{ fontWeight: theme.typography.h1.fontWeight, fontSize: { xs: '40px', md: '64px' }, mb: 2 }}>
+          Our <Box component="span" sx={{ color: 'primary.main' }}>Works</Box>
+        </Typography>
+        <Box sx={{ width: 80, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: '2px' }} />
+      </Box>
       <Stack spacing={10}>
         {projects.map((project, index) => (
           <Card
             key={index}
             sx={{
-              borderRadius: 6,
+              borderRadius: "8px",
               bgcolor: "#0a0a0a",
               border: "1px solid rgba(59, 193, 168, 0.2)",
               overflow: "hidden",
@@ -51,8 +51,13 @@ const Projects = () => {
                 image={project.image}
                 sx={{
                   width: "100%",
-                  height: { xs: 300, md: 550 },
+                  height: { xs: "300px", md: "500px" },
                   objectFit: "cover",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   bgcolor: "#0f0f0f",
                   transition: 'transform 0.8s ease',
                   transform: hovered === index ? 'scale(1.05)' : 'scale(1)',
@@ -61,35 +66,68 @@ const Projects = () => {
 
               {/* Hover Overlay with Theme Button */}
               {hovered === index && (
-                <Box
-                  sx={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(59, 193, 168, 0.1) 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backdropFilter: 'blur(4px)',
-                    transition: '0.3s'
-                  }}
-                >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: '#3BC1A8',
-                      color: '#000',
-                      fontWeight: 'bold',
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: '8px',
-                      '&:hover': { bgcolor: '#2da892' }
-                    }}
-                    onClick={() => window.open(project.link, "_blank")}
-                  >
-                    View Project
-                  </Button>
-                </Box>
-              )}
+  <Box
+    sx={{
+      position: "absolute",
+      inset: 0,
+      background: "linear-gradient(to top, rgba(0,0,0,0.95) 20%, rgba(23, 212, 170, 0.2) 100%)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      backdropFilter: 'blur(8px)',
+      transition: 'all 0.4s ease',
+      padding: 4,
+      textAlign: 'center'
+    }}
+  >
+    {/* Project Info */}
+    <Typography variant="h4"  sx={{ fontWeight: 500, color: 'white', mb: 1 }}>
+      {project.name}
+    </Typography>
+    
+    <Typography variant="body1" sx={{fontWeight:400 ,color: 'white', mb: 0.5 }}>
+      <strong>Client:</strong> {project.client}
+    </Typography>
+    
+    <Typography variant="body2" sx={{ color: 'white', mb: 2 }}>
+      <strong>Location:</strong> {project.location}
+    </Typography>
+
+    {/* Tools/Tech Stack */}
+    <Stack direction="row" spacing={1} flexWrap="wrap" justifyContent="center" sx={{ mb: 4 }}>
+      {project.tools?.map((tool, i) => (
+        <Box 
+          key={i} 
+          sx={{ 
+            fontSize: '12px', 
+            border: '1px solid #17D4AA', 
+            px: 1.5, py: 0.5, 
+            borderRadius: '4px',
+            color: '#17D4AA'
+          }}
+        >
+          {tool}
+        </Box>
+      ))}
+    </Stack>
+
+    <Button
+      variant="contained"
+      sx={{
+        bgcolor: '#17D4AA',
+        color: '#000',
+        fontWeight: 500,
+        px: 5,
+        borderRadius: '50px',
+        '&:hover': { bgcolor: '#12b591', transform: 'scale(1.05)' }
+      }}
+      onClick={() => window.open(project.link, "_blank")}
+    >
+      View Project
+    </Button>
+  </Box>
+)}
             </Box>
           </Card>
         ))}
@@ -97,7 +135,7 @@ const Projects = () => {
 
       {/* Footer Call-to-Action */}
       <Grid container alignItems="center" marginTop={20} spacing={4}>
-        <Grid  size={{xs:12 ,md:9 }}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Typography
             sx={{
               fontWeight: 800,
@@ -112,20 +150,21 @@ const Projects = () => {
           </Typography>
         </Grid>
 
-        <Grid   size={{xs:12 ,md:3 }}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="flex-end">
             <Button
               variant="contained"
               component={Link}
+              fullWidth
               to="/about"
               sx={{
                 bgcolor: 'white',
                 color: 'black',
-                fontWeight: 'bold',
-                height: "45px",
-              
+                fontWeight: 400,
+                px: { xs: 3, md: 4 },
+                py: 1.5,
                 borderRadius: '8px',
-                '&:hover': { bgcolor: '#f0f0f0' },
+                '&:hover': { bgcolor: '#d0cdcdff' },
               }}
             >
               {t("buttons.about")}
@@ -133,17 +172,18 @@ const Projects = () => {
             <Button
               variant="outlined"
               component={Link}
+              fullWidth
               to="/connect"
               sx={{
                 borderColor: '#3BC1A8',
                 color: '#3BC1A8',
-                fontWeight: 'bold',
-                height: "45px",
-               
+                fontWeight: 400,
+                px: { xs: 3, md: 4 },
+                py: 1.5,
                 borderRadius: '8px',
-                '&:hover': { 
-                  borderColor: '#3BC1A8', 
-                  bgcolor: 'rgba(59, 193, 168, 0.1)' 
+                '&:hover': {
+                  borderColor: '#3BC1A8',
+                  bgcolor: 'rgba(59, 193, 168, 0.1)'
                 },
               }}
             >
@@ -152,16 +192,16 @@ const Projects = () => {
           </Stack>
         </Grid>
       </Grid>
-      <ContactFloatingIcon 
-              whatsappNumber="+92 348-6805638"  
-              linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all" 
-              emailAddress="contact@primestacksol.com"   
-              phoneNumber="+92 348-6805638"  
-              themeColor="#3BC1A8"  
-              position="bottom-right"   
-              showEmail={true}   
-              showPhone={true}  
-            />
+      <ContactFloatingIcon
+        whatsappNumber="+92 348-6805638"
+        linkedinProfile="https://www.linkedin.com/company/primestack-sol/posts/?feedView=all"
+        emailAddress="contact@primestacksol.com"
+        phoneNumber="+92 348-6805638"
+        themeColor="#3BC1A8"
+        position="bottom-right"
+        showEmail={true}
+        showPhone={true}
+      />
     </Container>
   );
 };

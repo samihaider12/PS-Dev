@@ -1,37 +1,20 @@
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container} from '@mui/material';
 import Hero from '../pages/HeroSection';
 import DashboardPreview from '../components/DashboardPreview';
 import LogoSection from '../components/LogoSection';
 import Delivery from '../components/Delivery';
-import Works from '../pages/Works';
 import ServiceSection from './Services';
-import BackgroundLights from './BackGroundLight';
+ 
 const Home = () => {
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        bgcolor: 'background.default',
-        position: 'relative',
-        overflow: 'hidden',
-        
-      }}
-    >
-       <Box sx={{ position: "relative", minHeight: "100vh" ,marginTop:15}}>
-          
-          <BackgroundLights />
-          <Box sx={{ position: "relative", zIndex: 1 }}>
+    <Box>
             <Hero />
-            
-          </Box>
-        </Box>
-
       <Container >
 
         {/* 2. Dashboard Preview with 3D Effect */}
         <Box
           sx={{
-            // mt: { xs: 8, md: 12 },
+            mt: { xs: 8, md: 12 },
             perspective: '1200px',
             display: 'flex',
             justifyContent: 'center'
@@ -64,14 +47,7 @@ const Home = () => {
         <Delivery />
       </Box>
 
-      {/* 5. Works Section (Projects) */}
-      <Container maxWidth="lg" >
-        <Grid container justifyContent="center">
-          <Grid size={{ xs: 12 }}>
-            <Works />
-          </Grid>
-        </Grid>
-      </Container>
+     
 
       {/* 6. Services Section */}
       <Box >

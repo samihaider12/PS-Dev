@@ -53,7 +53,7 @@ const services = [
   { id: "devops", title: "DevOps", icon: <DeveloperBoardIcon sx={{ fontSize: 40 }} /> },
   { id: "api", title: "API Development", icon: <TerminalIcon sx={{ fontSize: 40 }} /> },
   { id: "machinelearning", title: "Machine Learning", icon: <MemoryIcon sx={{ fontSize: 40 }} /> },
-  
+
   { id: "eCommerce", title: "eCommerce", icon: <ShoppingCartIcon sx={{ fontSize: 40 }} /> },
   { id: "redesign", title: "Website Redesign", icon: <EditNoteIcon sx={{ fontSize: 40 }} /> },
   { id: "motion", title: "Motion Design", icon: <BoltIcon sx={{ fontSize: 40 }} /> },
@@ -94,6 +94,7 @@ const ServiceSection: React.FC = () => {
     bgcolor: theme.palette.background.default,
     border: `1px solid ${theme.palette.primary.main}44`, // Adding transparency
     borderRadius: '28px',
+
     boxShadow: `0 0 60px ${theme.palette.primary.main}22`,
     p: 4,
     outline: 'none',
@@ -119,10 +120,9 @@ const ServiceSection: React.FC = () => {
                 sx={{
                   height: 180, display: 'flex', flexDirection: 'column',
                   alignItems: 'center', justifyContent: 'center',
-                  bgcolor: 'background.paper',
                   border: '1px solid rgba(59, 193, 168, 0.1)',
                   borderRadius: '20px',
-                  color: 'text.secondary',
+                  color: 'primary.main',
                   transition: 'all 0.3s ease-in-out',
                   cursor: 'pointer', p: 2,
                   '&:hover': {
@@ -131,6 +131,7 @@ const ServiceSection: React.FC = () => {
                     color: 'primary.main',
                     transform: 'translateY(-10px)',
                     boxShadow: `0 15px 35px ${theme.palette.primary.main}22`,
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
                   },
                 }}
               >
@@ -153,7 +154,7 @@ const ServiceSection: React.FC = () => {
               background: `linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1464802686167-b939a67e0b24?auto=format&fit=crop&q=80')`,
               backgroundSize: 'cover', display: 'flex', flexDirection: 'column', justifyContent: 'center',
             }}>
-              <Typography variant="h3" sx={{ fontWeight: 800, mb: 2, fontSize: { xs: '2rem', md: '2.8rem' } }}>
+              <Typography variant="h3" sx={{ fontWeight: 500, mb: 2, fontSize: { xs: '2rem', md: '2.8rem' } }}>
                 {t("servicesSid.head1")} <br />
                 <Box component="span" sx={{ color: 'primary.main' }}>{t("servicesSid.head2")}</Box>
               </Typography>
@@ -161,8 +162,8 @@ const ServiceSection: React.FC = () => {
                 {t("servicesSid.para")}
               </Typography>
               <Button
-               component={Link}
-              to="/works"
+                component={Link}
+                to="/works"
                 variant="contained"
                 color="primary"
                 sx={{ px: 5, py: 1.5, borderRadius: '12px' }}
@@ -186,7 +187,7 @@ const ServiceSection: React.FC = () => {
                 }}>
                   <Box sx={{ textAlign: 'center', color: 'primary.main' }}>
                     {plat.icon}
-                    <Typography variant="caption" display="block" sx={{ mt: 1.5, color: 'text.primary', fontWeight: 700 }}>{plat.name}</Typography>
+                    <Typography variant="caption" display="block" sx={{ mt: 1.5, color: 'text.primary', fontWeight: 500 }}>{plat.name}</Typography>
                   </Box>
                 </Box>
               ))}
@@ -205,7 +206,7 @@ const ServiceSection: React.FC = () => {
           {[1, 2].map((loop) => (
             <Box key={loop} sx={{ display: 'flex', whiteSpace: 'nowrap' }}>
               {[
-                "AWS Cloud Solutions", "AI & Machine Learning", "Web Development", 
+                "AWS Cloud Solutions", "AI & Machine Learning", "Web Development",
                 "Next.js Applications", "Flutter Mobile Apps", "Docker & DevOps",
                 "SEO Optimization", "WordPress Development"
               ].map((text, i) => (
@@ -272,7 +273,7 @@ const ServiceSection: React.FC = () => {
                 <Typography variant="h5" sx={{ color: 'text.primary', fontWeight: 900 }}>{selectedService.title}</Typography>
               </Box>
               <Typography sx={{ color: 'text.secondary', mb: 4, lineHeight: 1.8 }}>
-                {t(`servicespop.details.${selectedService.id}.mainDesc`, 
+                {t(`servicespop.details.${selectedService.id}.mainDesc`,
                   `Complete ${selectedService.title} solutions tailored to your business needs.`)}
               </Typography>
               <Typography variant="subtitle1" sx={{ color: 'primary.main', fontWeight: 800, mb: 2, textTransform: 'uppercase' }}>Key Features</Typography>

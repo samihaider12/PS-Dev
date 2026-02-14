@@ -165,7 +165,7 @@ const ServiceSection2 = () => {
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  mt: 2
+                  height:"215px",
                 }}>
                   <DynamicClock />
                 </Box>
@@ -174,8 +174,8 @@ const ServiceSection2 = () => {
                 <Box sx={{ mt: 3, textAlign: 'center' }}>
                   <Typography variant="caption" sx={{ 
                     color: theme.palette.primary.main,
-                    fontSize: '0.75rem',
-                    fontWeight: 'bold'
+                    fontSize: '15px',
+                    fontWeight: 500
                   }}>
                     Always on Time
                   </Typography>
