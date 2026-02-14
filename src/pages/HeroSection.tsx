@@ -98,7 +98,7 @@ const Hero = () => {
             <Button
               variant="contained"
               component={Link}
-              to="/contact"
+              to="/connect"
               sx={{ 
                 borderRadius: '30px',
                 height:"34px", 
