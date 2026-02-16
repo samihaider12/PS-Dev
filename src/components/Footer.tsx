@@ -226,7 +226,7 @@ const Footer = () => {
         }}>
           <Box
             component={RouterLink}
-            to="/home"
+            to="/"
             sx={{
               display: 'flex',
               alignItems: 'center',

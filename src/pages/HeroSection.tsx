@@ -31,10 +31,18 @@ const StatCard = ({ title, subtitle }: StatCardProps) => (
       }
     }}
   >
-    <Typography variant="h6" sx={{ fontWeight: 500, color: 'white', mb: 1, lineHeight: 1.2 }}>
+    <Typography variant="h6" sx={{ fontWeight: 500, color: 'white', mb: 1, lineHeight: 1.2,
+      textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' ,
+     }}>
       {title}
     </Typography>
-    <Typography variant="body2" sx={{ color: 'black', fontSize: '17px' }}>
+    <Typography variant="body2" 
+    sx={{ 
+      color:'white',
+      fontSize: '17px',
+      textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' 
+
+    }}>
       {subtitle}
     </Typography>
   </Box>
@@ -68,8 +76,8 @@ const Hero = () => {
             sx={{
               fontSize: { xs: '2.5rem', sm: '3.5rem', md: '60px' },
               fontWeight: 500,
-              color:{ xs:"#201d1dff",sm:"white" ,md:'white'},
-              textShadow:"5px",
+              color:"white",
+              textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' ,
               lineHeight: 1.1,
               mt:{xs:"15px"},
               mb: 3,

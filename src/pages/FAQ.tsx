@@ -201,7 +201,9 @@ const FAQSection = () => {
                   }
                 }}
               >
-                <Typography sx={{ 
+                <Typography 
+                  component="div"
+                  sx={{ 
                   fontWeight: 500, 
                   fontSize: { xs: '1rem', md: '1.15rem' },
                   display: 'flex',

@@ -60,7 +60,7 @@ const NotFoundPage: React.FC = () => {
           </Typography>
            <Button
               component={RouterLink}
-              to="/home"
+              to="/"
               variant="contained"
               startIcon={<HomeIcon />}
               sx={{
