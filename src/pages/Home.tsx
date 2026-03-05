@@ -4,25 +4,10 @@ import DashboardPreview from '../components/DashboardPreview';
 import LogoSection from '../components/LogoSection';
 import Delivery from '../components/Delivery';
 import ServiceSection from './Services';
-import { Helmet } from 'react-helmet-async';
  
 const Home = () => {
   return (
-
     <Box>
-     <Helmet>
-  <title>Primestack Solutions | Best Software House in [Multan]</title>
-  <meta name="description" content="Welcome to Primestack Solutions. We provide high-end web development, mobile apps, and DevOps services." />
-  
-  {/* Open Graph (Social Media ke liye) */}
-  <meta property="og:title" content="Primestack Solutions" />
-  <meta property="og:description" content="Innovating the future with Prime Stack Solutions." />
-  <meta property="og:image" content="https://primestacksol.com/og-image.jpg" /> 
-  <meta property="og:url" content="https://primestacksol.com/" />
-  
-  <link rel="canonical" href="https://primestacksol.com/" />
-</Helmet>
-
             <Hero />
       <Container >
 

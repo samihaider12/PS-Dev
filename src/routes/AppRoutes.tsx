@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, Suspense, lazy } from 'react';
 import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
 import { theme } from '../theme/theme';
-import { HelmetProvider } from 'react-helmet-async';
+
 
 
 // Layout Components (Keep these non-lazy as they appear on every page)
@@ -43,15 +43,12 @@ const PageLoader = () => (
 
 const AppRouter = () => {
   return (
-    <HelmetProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline /> 
       
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
-        
-        {/* Suspense handles the loading state while the lazy component is being fetched */}
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -69,7 +66,6 @@ const AppRouter = () => {
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
-    </HelmetProvider>
   );
 };
 
