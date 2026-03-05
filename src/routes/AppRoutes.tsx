@@ -1,18 +1,24 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import {  ThemeProvider, CssBaseline } from '@mui/material';
-import { theme } from '../theme/theme'; // Make sure you create the theme.ts file below
+import { useEffect, Suspense, lazy } from 'react';
+import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
+import { theme } from '../theme/theme';
+import { HelmetProvider } from 'react-helmet-async';
+
+
+// Layout Components (Keep these non-lazy as they appear on every page)
 import Navbar from '../components/Navbar';
-import Home from '../pages/Home';
-import AboutUs from '../pages/AboutUs';
-import Works from '../pages/Works';
-import Services from '../pages/Services';
-import ConnectSection from '../pages/Connect';
-import Templates from '../pages/Templates';
-import FAQSection from '../pages/FAQ';
-import Approach from '../pages/Approach';
 import Footer from '../components/Footer';
-import NotFoundPage from '../pages/NotFoundPage';
+
+// Lazy Loaded Pages
+const Home = lazy(() => import('../pages/Home'));
+const AboutUs = lazy(() => import('../pages/AboutUs'));
+const Works = lazy(() => import('../pages/Works'));
+const Services = lazy(() => import('../pages/Services'));
+const ConnectSection = lazy(() => import('../pages/Connect'));
+const Templates = lazy(() => import('../pages/Templates'));
+const FAQSection = lazy(() => import('../pages/FAQ'));
+const Approach = lazy(() => import('../pages/Approach'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 // Helper to scroll to top on page change
 const ScrollToTop = () => {
@@ -23,17 +29,30 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Loading Fallback Component
+const PageLoader = () => (
+  <Box 
+    display="flex" 
+    justifyContent="center" 
+    alignItems="center" 
+    minHeight="60vh"
+  >
+    <CircularProgress color="primary" />
+  </Box>
+);
+
 const AppRouter = () => {
   return (
+    <HelmetProvider>
     <ThemeProvider theme={theme}>
-      {/* CssBaseline makes the background dark and resets browser styles */}
       <CssBaseline /> 
       
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
         
-         
+        {/* Suspense handles the loading state while the lazy component is being fetched */}
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
@@ -44,12 +63,13 @@ const AppRouter = () => {
             <Route path="/approach" element={<Approach />} />
             <Route path="/templates" element={<Templates />} />
             <Route path="*" element={<NotFoundPage />} />
-             
           </Routes>
+        </Suspense>
         
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
+    </HelmetProvider>
   );
 };
 
